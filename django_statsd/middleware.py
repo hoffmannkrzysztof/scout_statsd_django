@@ -1,10 +1,28 @@
 import inspect
-import time
+import re
+
+from time import time
 
 from django.conf import settings
 from django.http import Http404
 
 from django_statsd.clients import statsd
+
+class StatsMiddleware(object):
+
+    def process_request(self, request):
+        request._start_time = time()
+
+    def process_response(self, request, response):
+        statsd.incr('django.response_codes.%s' % re.sub('\d{2}$','xx', str(response.status_code)))
+        if hasattr(request, '_start_time'):
+            ms = int((time() - request._start_time) * 1000)
+            statsd.timing('django.response', ms)
+        return response
+
+    def process_exception(self, request, exception):
+        if not isinstance(exception, Http404):
+            statsd.incr('django.response_codes.5xx')  
 
 
 class GraphiteMiddleware(object):
