@@ -2,7 +2,7 @@
 Scout StatsD Django 
 ===================
 
-The ``scout_statsd_django`` extension instruments Django applications served by Django with StatsD. This extension was forked from `django_statsd <https://github.com/andymckay/django-statsd>` is maintained by `Scout <https://scoutapp.com>` for our `hosted StatsD <https://scoutapp.com/statsd>` service but is compatible with any StatsD collector. 
+The ``scout_statsd_django`` extension instruments Django applications served by Django with StatsD. This extension was forked from `django_statsd <https://github.com/andymckay/django-statsd>`_ is maintained by `Scout <https://scoutapp.com>`_ for our `hosted StatsD <https://scoutapp.com/statsd>`_ service but is compatible with any StatsD collector. 
 
 
 .. image:: https://dl.dropboxusercontent.com/u/2333541/django_dash.png
@@ -10,6 +10,7 @@ The ``scout_statsd_django`` extension instruments Django applications served by 
 
 
 Original project documentation is on `Read the Docs <https://django-statsd.readthedocs.org/>`_.
+
 ----------------
 Reported Metrics
 ----------------
@@ -28,19 +29,19 @@ Django Installation
 Using with Scout
 ----------------
 
-Just install the `Scoutd <http://help.scoutapp.com/docs/agent>` agent on the host(s) serving the app to see the Django metrics in the Scout UI.
+Just install the `Scoutd <http://help.scoutapp.com/docs/agent>`_ agent on the host(s) serving the app to see the Django metrics in the Scout UI.
 
 -----
 Scope
 -----
 
-This extension is laser-focused on Django-related metrics. Other `scout_statsd_X` extensions instrument different areas of code and frameworks.
+This extension is laser-focused on Django-related metrics. Other ``scout_statsd_X`` extensions instrument different areas of code and frameworks.
 
 --------------------
 Questions? Feedback?
 --------------------
 
-`Create an issue <https://github.com/scoutapp/scout_statsd_rack/issues>` or shoot an email to `support@scoutapp.com <mailto: support@scoutapp.com>`
+`Create an issue <https://github.com/scoutapp/scout_statsd_rack/issues>`_ or shoot an email to `support@scoutapp.com <mailto: support@scoutapp.com>`_
 
 ------------
 Contributing
