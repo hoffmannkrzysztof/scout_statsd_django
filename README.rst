@@ -32,9 +32,10 @@ Add the package:
 Next, update ``setttings.py`` and add the following middleware to the top of the list:
     
 ::
-    MIDDLEWARE_CLASSES = (
-      'django_statsd.middleware.StatsMiddleware', ) 
-      + MIDDLEWARE_CLASSES
+
+      MIDDLEWARE_CLASSES = (
+        'django_statsd.middleware.StatsMiddleware', ) 
+        + MIDDLEWARE_CLASSES
 
 ----------------
 Using with Scout
