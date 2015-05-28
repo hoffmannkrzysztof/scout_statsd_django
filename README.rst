@@ -27,7 +27,9 @@ Django Installation
 
 Add the package:
 
-    ``pip install git+git://github.com/scoutapp/scout_statsd_django.git``
+::
+
+      pip install git+git://github.com/scoutapp/scout_statsd_django.git
 
 Next, update ``setttings.py`` and add the following middleware to the top of the list:
     
