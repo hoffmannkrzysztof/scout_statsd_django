@@ -5,10 +5,11 @@ from time import time
 
 from django.conf import settings
 from django.http import Http404
+from django.utils.deprecation import MiddlewareMixin
 
 from django_statsd.clients import statsd
 
-class StatsMiddleware(object):
+class StatsMiddleware(MiddlewareMixin):
 
     def process_request(self, request):
         request._start_time = time()
@@ -25,7 +26,7 @@ class StatsMiddleware(object):
             statsd.incr('django.response_codes.5xx')  
 
 
-class GraphiteMiddleware(object):
+class GraphiteMiddleware(MiddlewareMixin):
 
     def process_response(self, request, response):
         statsd.incr('response.%s' % response.status_code)
@@ -40,7 +41,7 @@ class GraphiteMiddleware(object):
                 statsd.incr('response.auth.500')
 
 
-class GraphiteRequestTimingMiddleware(object):
+class GraphiteRequestTimingMiddleware(MiddlewareMixin):
     """statsd's timing data per view."""
 
     def process_view(self, request, view_func, view_args, view_kwargs):
